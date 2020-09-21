@@ -6,6 +6,7 @@ const processPath = require('../lib/path');
 router.get('/:path', (req, res, err) => {
   try {
     const file = processPath(req.params.path).absolutePath;
+    console.log("RUTA FICHERO: " + file);
     // Devuelve el tipo de archivo para insertar en la cabecera
     const mimetype = mime.lookup(file);
     // eslint-disable-next-line no-console
