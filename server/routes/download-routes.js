@@ -6,7 +6,6 @@ const processPath = require('../lib/path');
 router.get('/:path', (req, res, err) => {
   try {
     const file = processPath(req.params.path).absolutePath;
-    console.log("RUTA FICHERO: " + file);
     // Devuelve el tipo de archivo para insertar en la cabecera
     const mimetype = mime.lookup(file);
     // eslint-disable-next-line no-console
@@ -15,7 +14,10 @@ router.get('/:path', (req, res, err) => {
     res.setHeader('Content-Type', mimetype);
     res.download(file);
   } catch (err) {
-    next(err);
+    return res.status(400).json({
+      success: false,
+      message: err.message
+    });
   }
 });
 
