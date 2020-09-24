@@ -6,9 +6,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card'
 
-class Element extends React.Component {
-  
-}
 
 class Directory extends React.Component {
     render() {
@@ -20,7 +17,6 @@ class Directory extends React.Component {
         </Row>
         <Row>
           <Card>
-            <Card.ImgOverlay src="holder.js/100px180" />
             <Card.Body>This is some text within a card body.</Card.Body>
           </Card> 
         </Row>
